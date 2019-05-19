@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Employee Management System</title>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
@@ -70,19 +71,19 @@ span.psw {
 
 <h2 style="text-align:center">Login Form</h2>
 
-<form action="/action_page.php">
+
   
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input id='username' type="text" placeholder="Enter Username"  required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" id='password' required>
         
-    <button type="submit">Login</button>
+    <button id='login' type="submit">Login</button>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
+      <input type="checkbox" checked="checked"> Remember me
     </label>
   </div>
 
@@ -90,6 +91,35 @@ span.psw {
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
-</form>
+
+<script >
+const button = document.getElementById('login');
+button.addEventListener('click', function onClick(e){
+
+  //console.log("button is clicked")
+const usernameNode= document.getElementById('username'); //node selector
+const passwordNode = document.getElementById('password');
+
+const usernameValue = usernameNode.value;// content aauxa
+const passwordValue = passwordNode.value;
+
+//validate with expresss server
+
+console.log(usernameValue, passwordValue);
+
+
+    // retrieve password
+    // retrieve username
+    //send a request to express serverI(fetch /axios)
+    // validate the user
+    // finally send the user to dashboard
+
+    //make express server in github
+})
+
+
+
+</script>
 
 </body>
+</html>
